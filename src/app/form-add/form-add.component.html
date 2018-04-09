@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    New Verb
+  </div>
+  <div class="card-body">
+    <form #verbForm="ngForm">
+      <div class="form-group">
+        <label for="translation">Translation</label>
+        <input type="text" class="form-control" id="translation"
+               required
+               #translation="ngModel"
+               [ngClass]="{'is-invalid': translation.invalid && translation.touched}"
+               [(ngModel)]="model.translate" name="translation">
+      </div>
+      <div class="form-row">
+        <div class="col-md form-group">
+          <label for="infinitive">Infinitive</label>
+          <input type="text" class="form-control " id="infinitive"
+                 required
+                 #infinitive="ngModel"
+                 [ngClass]="{'is-invalid': infinitive.invalid && infinitive.touched}"
+                 [(ngModel)]="model.infinitive" name="infinitive">
+        </div>
+
+        <div class="col-md form-group">
+          <label for="Simple">Simple</label>
+          <input type="text" class="form-control" id="Simple"
+                 required
+                 #simple="ngModel"
+                 [ngClass]="{'is-invalid': simple.invalid && simple.touched}"
+                 [(ngModel)]="model.simple" name="simple">
+        </div>
+
+        <div class="col-md form-group">
+          <label for="Participle">Participle</label>
+          <input type="text" class="form-control" id="Participle"
+                 required
+                 #participe="ngModel"
+                 [ngClass]="{'is-invalid': participe.invalid && participe.touched}"
+                 [(ngModel)]="model.participate" name="participe">
+        </div>
+      </div>
+
+      <button class="btn btn-primary" (click)="newVerb()">Add</button>
+    </form>
+  </div>
+</div>
+
+

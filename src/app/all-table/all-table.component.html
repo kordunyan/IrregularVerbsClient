@@ -1,0 +1,14 @@
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+  <th></th>
+  <th>Infinitive</th>
+  <th>Simple</th>
+  <th>Participle</th>
+  <th>Translation</th>
+  </thead>
+   <tr
+    app-verb-row 
+    *ngFor="let verb of verbs"
+    [verb]="verb">
+  </tr>
+</table>

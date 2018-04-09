@@ -1,0 +1,9 @@
+<td class='thumb-row'>
+  <div class="image-thumb" [ngStyle]="{'background-image':getImageUrl(verb)}"></div>  
+</td>
+<td class="align-middle">{{ verb.infinitive }}</td>
+<td class="align-middle">{{ verb.simple }}</td>
+<td class="align-middle">{{ verb.participate }}</td>
+<td class="align-middle">{{ verb.translate }}</td>
+
+<ng-content></ng-content>

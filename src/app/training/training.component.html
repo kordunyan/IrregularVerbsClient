@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col buttons">
+      <button class="btn btn-primary" 
+              (click)="showLast()"
+              *ngIf="currentVerbIndex !== 0">Last</button>
+      <button class="btn btn-primary float-right" 
+              (click)="showNext()"
+              *ngIf="(allVerbs.length - 1) > currentVerbIndex">Next</button>      
+  </div>
+</div>
+
+<app-verb-card *ngIf="loaded" [verb]="verb"></app-verb-card>

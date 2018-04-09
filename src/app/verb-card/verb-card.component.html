@@ -1,0 +1,49 @@
+<div class="media">
+  <img class="align-self-start mr-3 w-25" src="http://localhost:8080/images/{{ verb.image }}">
+  <div class="media-body">
+    <h5 class="mt-0 text-capitalize">{{ verb.translate }}</h5>
+    <div class="form-row verbs-row" *ngIf="mode">
+        <div class="col-md form-group">
+            <input type="text" class="form-control" [value]="verb.infinitive" disabled>
+        </div>
+        <div class="col-md form-group">
+            <input type="text" class="form-control" [value]="verb.simple" disabled>
+        </div>
+        <div class="col-md form-group">
+          <input type="text" class="form-control" [value]="verb.participate" disabled>
+        </div>
+    </div>
+
+    <form>
+        <div class="form-row verbs-row">
+            <div class="col-md form-group">
+                <input type="text" class="form-control"
+                        #infinitive
+                        name="infinitive"
+                        [ngClass]="{'is-valid': checkResult.infinitive}"
+                        [(ngModel)]="checkVerb.infinitive"
+                        autocomplete="off"
+                        (input)="onInfinitiveInput()" >
+            </div>
+            <div class="col-md form-group">
+                <input type="text" class="form-control" 
+                        #simple
+                        [ngClass]="{'is-valid': checkResult.simple}"
+                        [(ngModel)]="checkVerb.simple"
+                        (input)="onSimpleInput()"
+                        autocomplete="off"
+                        name="simple">
+            </div>
+            <div class="col-md form-group">
+              <input type="text" class="form-control"
+                    #participle
+                    name="participle"
+                    [ngClass]="{'is-valid': checkResult.participate}"
+                    [(ngModel)]="checkVerb.participate"
+                    autocomplete="off"
+                    (input)="onParticipleInput()">
+            </div>
+        </div>  
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<h5 class="text-center bg-bottom-md">Select verbs</h5>
+
+<div class="row bg-bottom-md">
+  <div class="col">
+    <button class="btn btn-primary float-right" (click)="start()">Start</button>
+  </div>
+</div>
+
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+  <th></th>
+  <th>Infinitive</th>
+  <th>Simple</th>
+  <th>Participle</th>
+  <th>Translation</th>
+  <th class="text-center">
+    <input type="checkbox" name="selectDelelcetAll" [(ngModel)]="selectDelelcetAll" (change)="selectDeselect()">
+  </th>
+  </thead>
+  <tr
+    app-verb-row 
+    *ngFor="let verbSelect of allVerbs"
+    [verb]="verbSelect.verb">
+    <td class="text-center align-middle">
+      <input type="checkbox" name="verbId" [(ngModel)]="verbSelect.isSelect">
+    </td>
+  </tr>
+</table>
+
+<div class="row bg-bottom-md">
+  <div class="col">
+    <button class="btn btn-primary float-right" (click)="start()">Start</button>
+  </div>
+</div>

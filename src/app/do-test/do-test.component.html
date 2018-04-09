@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col buttons">
+      <button class="btn btn-primary float-left" 
+              (click)="restart()"
+              >Restart</button>  
+      <h5 class="text-center" *ngIf="isLoaded">{{currentIndex}} / {{ allVerbs.length }}</h5>   
+  </div>
+</div>
+
+<app-verb-card 
+              *ngIf="isLoaded && !testReady" 
+              [verb]="verb" 
+              (onTrueInput)="goToNext()"
+              [mode]="false"></app-verb-card>
+
+<app-ready-teast *ngIf="testReady"></app-ready-teast>
